@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Call Analysis Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-title">
+            🤖 AI Call Analysis
+        </div>
+
+        <div>
+            <span class="online">● System Online</span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="welcome">
+
+            <div>
+                <h1>Welcome to AI Call Analysis 👋</h1>
+
+                <p>
+                    Analyze customer calls using AI-powered
+                    speech, emotion and sentiment analysis.
+                </p>
+            </div>
+
+            <div class="welcome-icon">
+                🎙️
+            </div>
+
+        </section>
+
+
+        <section class="upload-section">
+
+            <h2>📞 Analyze Customer Call</h2>
+
+            <p>
+                Upload an audio file to analyze the customer conversation.
+            </p>
+
+            <div class="upload-box">
+
+                <div class="upload-icon">🎵</div>
+
+                <h3>Upload Call Recording</h3>
+
+                <p>MP3, WAV or other audio files</p>
+
+                <input
+                    type="file"
+                    id="audioFile"
+                    accept="audio/*"
+                    onchange="showFileName()"
+                >
+
+                <p id="fileName"></p>
+
+            </div>
+
+            <button class="analyze-btn" onclick="analyzeCall()">
+                🔍 Analyze Call
+            </button>
+
+            <button class="reset-btn" onclick="resetAnalysis()">
+                ↻ Reset
+            </button>
+
+            <div id="loading">
+                ⏳ AI is analyzing the call...
+            </div>
+
+        </section>
+
+
+        <section class="dashboard">
+
+            <div class="card emotion">
+                <div class="card-icon">😊</div>
+                <h3>Emotion</h3>
+                <h2 id="emotion">--</h2>
+            </div>
+
+            <div class="card sentiment">
+                <div class="card-icon">💚</div>
+                <h3>Sentiment</h3>
+                <h2 id="sentiment">--</h2>
+            </div>
+
+            <div class="card score">
+                <div class="card-icon">⭐</div>
+                <h3>Call Score</h3>
+                <h2 id="score">--</h2>
+            </div>
+
+            <div class="card duration">
+                <div class="card-icon">⏱️</div>
+                <h3>Duration</h3>
+                <h2 id="duration">--</h2>
+            </div>
+
+        </section>
+
+
+        <section class="content-grid">
+
+            <div class="content-box">
+
+                <div class="box-heading">
+                    <h2>📝 Call Transcript</h2>
+
+                    <button onclick="copyTranscript()">
+                        📋 Copy
+                    </button>
+                </div>
+
+                <div id="transcript">
+                    Upload a call and click
+                    <b>Analyze Call</b> to view transcript.
+                </div>
+
+            </div>
+
+
+            <div class="content-box">
+
+                <h2>🤖 AI Call Summary</h2>
+
+                <div id="summary">
+                    AI-generated summary will appear here.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="keypoints">
+
+            <h2>🔑 Key Points</h2>
+
+            <ul id="keyPoints">
+                <li>Call analysis results will appear here.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        AI-Based Call Analysis System © 2026
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
